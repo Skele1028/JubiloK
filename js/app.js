@@ -65,8 +65,8 @@ function cameraStopped(){
 
 $("#takePhoto").click(function () {
     beforeTakePhoto();
-    let picture = webcam.snap();
-    document.querySelector('#download-photo').href = picture;
+    webcam.snap();
+   /*  document.querySelector('#download-photo').href = picture; */
     afterTakePhoto();
 });
 
