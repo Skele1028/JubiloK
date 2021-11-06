@@ -1,0 +1,298 @@
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*Indicacion de giro del celular */
+#warning{
+  text-align: center; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  vertical-align: middle; 
+  height: 100vh; 
+  padding: 2em; 
+  font-size: 1.5em;
+}
+
+/*Indicacion de giro del celular */
+@media screen and (orientation:landscape) {
+  #webcam-app{
+      display: flex;
+  }
+  #view-cam{
+    display: flex;
+  }
+  #warning{
+      display: none;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  #warning{
+      display: flex;
+  } 
+  
+  #webcam-app #view-cam{
+      display: none;
+  }
+ 
+}
+
+#webcam{
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+  margin: auto;
+}
+
+/* Aplicacion general */
+#webcam-app {
+  background-image: url(../images/Fondo.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Menu para iniciar la camara */
+#webcam-control{
+  background-image: url(../images/Logo+marco.png);
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border:none !important;
+  width: 45vw;
+  height: 40vh;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+/* Boton inicio de camara */
+#button-start{
+  color: white;
+  width: 9vw;
+  height: 9vh; 
+  position: relative;
+  right: 15%;
+  border: none;
+  background-color: transparent;
+  background-image: url('../images/Button1.png');
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(6px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+#button-start:hover{
+  animation: moveInBottom 0.5s ease-out;
+}
+
+
+.webcam-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+
+.app-panel{
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-color: black;
+}
+
+.cameraControls {
+  position: absolute;
+  bottom: 12vh;
+  width: 100%;
+  z-index: 99999;
+  background: transparent;
+  opacity: 0.7;
+  padding: 10px;
+}
+
+#cameraFlip {
+  width: 70px;
+  height: 55px;
+  margin-left: 40px;
+  margin-top: -10px;
+  position: absolute;
+  cursor: pointer;
+  background-color: black;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images//camera_flip_white.png);
+  background-size: cover;
+}
+
+ #errorMsg {
+     position: fixed;
+     top: 22vh;
+     left: 0;
+     padding: 20px;
+     z-index: 999999;
+ }
+
+ @media screen and (min-width: 768px) {
+    #errorMsg {
+        position: fixed;
+        top: 32vh;
+        left: 20vw;
+        padding: 20px;
+        z-index: 999999;
+    }
+ }
+
+
+.material-icons{
+  width: 100px;
+  font-size: 30px !important;
+  color: white;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+  padding-top: 15px;
+  margin: 0 6px;
+}
+
+.flash{ 
+  position:fixed; 
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#fff;
+  z-index: 999999;
+}
+
+#canvas{
+  background-color: transparent;
+  position: absolute;
+  width: auto;
+  height: 100vh;
+  z-index: 9999;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#gesture-area{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999
+}
+
+#montaje{
+  object-fit: contain;  
+  transform: scale(1); 
+  height: 60vh;
+  width: 55vw;
+}
+
+#logos-container{
+  position: absolute;
+  bottom: 1vh;
+  width: 100%;
+  z-index: 99999;
+  background: transparent;
+  opacity: 0.7;
+  padding: 10px;
+}
+
+#logoJubilo{
+  position: absolute;
+  width: 20%;
+  object-fit: contain;
+  z-index: 1000;
+  bottom: .5rem;
+  left: 1rem;
+}
+
+#logoKaleidoLab{
+  position: absolute;
+  width: 20%;
+  object-fit: contain;
+  z-index: 1000;
+  bottom: .5rem;
+  right: 1rem;
+}
+
+#timer{
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  align-self: center;
+  color: white;
+  text-shadow: 4px 4px 2px black;
+  font-size: 10rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+
+@media screen and (max-width: 420px) {
+  .form-control.webcam-start{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cameraControls{
+    bottom: 2vh;
+  }
+  #images-container{
+    bottom: 6vh;
+  }
+}
+
+
+/* Para acomodar boton */
+@media screen and (min-width: 420px) and (max-width: 767px) {
+  .form-control.webcam-on {
+    top: 17vh;
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-control.webcam-on {
+    top: 16vh;
+    left: 8vw;
+  }
+}
