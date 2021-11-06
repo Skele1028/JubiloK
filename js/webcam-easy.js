@@ -169,7 +169,7 @@ class Webcam {
       const $boton = document.querySelector("#btnCapturar"), // El botón que desencadena
         $objetivo = document.body; // A qué le tomamos la fotocanvas
       // Nota: no necesitamos contenedor, pues vamos a descargarla
-
+      alert($objetivo.className);
       // Agregar el listener al botón
       $boton.addEventListener("click", () => {
         html2canvas($objetivo) // Llamar a html2canvas y pasarle el elemento

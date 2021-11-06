@@ -65,9 +65,11 @@ function cameraStopped(){
 
 $("#takePhoto").click(function () {
     beforeTakePhoto();
+    alert("paso before");
     webcam.snap();
    /*  document.querySelector('#download-photo').href = picture; */
     afterTakePhoto();
+    alert("paso after");
 });
 
 function beforeTakePhoto(){
